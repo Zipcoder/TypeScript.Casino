@@ -1,11 +1,14 @@
+/// <reference path="casino/utils/webutils/DisplayElement.ts"/>
+/// <reference path="casino/utils/webutils/InputElement.ts"/>
+/// <reference path="casino/utils/webutils/PageObject.ts"/>
 class AliceBob{
 
-	displayEle:any;
-	userInputEle:any;
+	displayEle:DisplayElement;
+	userInputEle:InputElement;
 
 	constructor(){
-		this.displayEle = document.getElementById("display");
-		this.userInputEle = document.getElementById("user_input")
+		this.displayEle = PageObject.DISPLAY;
+		this.userInputEle = PageObject.INPUT;
 	}
 
 	init(){
@@ -13,17 +16,20 @@ class AliceBob{
 	}
 
 	submitName() {
-		this.displayEle.innerHTML += "<br/>";
-		if(this.userInputEle.value.toLowerCase() == "bob" || this.userInputEle.value.toLowerCase() == "alice"){
-			this.displayEle.innerHTML += "Greetings, " + this.userInputEle.value + "!" ;
-		}else{
-			this.displayEle.innerHTML +=  this.userInputEle.value + "? " + "Stranger Danger!!!";
+		let display = this.displayEle;
+		let userInput= this.userInputEle;
+		let userInputValue = userInput.getValue().toLowerCase();
+
+		display.appendNewLine("");
+		if(userInputValue == "bob" || userInputValue == "alice"){
+			display.append("Greetings, " + userInputValue + "!");
+		} else {
+			display.append(userInputValue + "? Stranger Danger!!!");
 		}
-		this.displayEle.innerHTML += "<br/><br/>";
 		this.askForName();
 	}
 
 	askForName(){
-		this.displayEle.innerHTML += "What is your name?"
+		this.displayEle.append("What is your name?");
 	}
 }
