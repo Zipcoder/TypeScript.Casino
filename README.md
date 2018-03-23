@@ -38,7 +38,6 @@
 ### `GameInterface` interface
 * **Description:**
 	* Represents a game which handles some type of player.
-* should implement `Runnable`
 * should be parameterized with a generic type whose upper bound is `PlayerInterface`.
 	* e.g. - `SomePlayerType` is a subclass of `PlayerInterface`.
 	* This restricts the types of players this game can interact with.
