@@ -41,7 +41,7 @@
 * should be parameterized with a generic type whose upper bound is `PlayerInterface`.
 	* e.g. - `SomePlayerType` is a subclass of `PlayerInterface`.
 	* This restricts the types of players this game can interact with.
-* `GameInterface` should enforce an aspect of
+* `GameInterface` should declare each of the following methods:
 	* `TypeOfPlayer[] getPlayers()`
 	* `TypeOfPlayer getPlayer(Long playerId)`
 	* `void addPlayer(TypeOfPlayer player)`
