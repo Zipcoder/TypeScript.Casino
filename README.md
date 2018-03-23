@@ -50,7 +50,7 @@
 
 ### `GameEngineInterface` interface
 * **Description:**
-	* `GameEngineInterface` is a contract which ensures all `GameEngine` can perform basic `GameEngine` operations on a specific type of `Player` and a specific type of `Game`
+	* `GameEngineInterface` is a contract which ensures a specific type of `GameEngine` operates on a specific type of `Player` and a specific type of `Game`
 
 * should be parameterized with two generic types
 	* `GameTypePlayer` a sub class of `PlayerInterface`
